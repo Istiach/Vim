@@ -35,3 +35,5 @@ endfunction
 colo darkblue
 syntax on
 filetype plugin indent on
+set backupdir=~/vimtmp,.
+set directory=~/vimtmp,.
