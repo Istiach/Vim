@@ -35,8 +35,19 @@ endfunction
 colo darkblue
 syntax on
 filetype plugin indent on
-set backupdir=~\vimtmp,.
-set directory=~\vimtmp,.
+
+" tell vim to keep a backup file
+set backup
+
+" tell vim where to put its backup files
+set backupdir=~\vimtmp
+
+" tell vim where to put presistent undo file
+set undodir=~\vimtmp
+
+" tell vim where to put swap files
+set dir=~\vimtmp
+
 set number
 set list
 set ignorecase
@@ -47,7 +58,9 @@ set ignorecase
 set nocompatible
 
 " Enable syntax and plugins (for netwr)
-syntax enable
+if !exists("g:syntax_on")
+    syntax enable
+endif
 filetype plugin on
 
 " FINDING FILES:
